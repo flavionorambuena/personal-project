@@ -10,8 +10,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ProductListComponent],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, AppComponent, ProductListComponent, RouterModule.forRoot(routes)],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
