@@ -18,6 +18,8 @@ jobs:
         run: npm install --prefix shop-app
       - name: Build
         run: npm run build --prefix shop-app
+      - name: Test
+        run: npm test --prefix shop-app
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v2
         env:

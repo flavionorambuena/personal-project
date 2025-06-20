@@ -17,3 +17,7 @@ This is a minimal Angular 20 project for a simple online store. It contains a pr
    ```
 
 The application will be available at `http://localhost:4200`.
+
+## GitHub Pages
+
+A production build is automatically deployed to GitHub Pages from the `main` branch. Visit `https://<username>.github.io/personal-project/` after enabling GitHub Pages in the repository settings.
