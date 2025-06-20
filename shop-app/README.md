@@ -3,7 +3,7 @@
 This is a minimal Angular 20 project for a simple online store. It contains a product list component to get you started.
 
 ## Requirements
-- Node.js 18 or later
+- Node.js 20 or later
 - Angular CLI 20
 
 ## Setup
