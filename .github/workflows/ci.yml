@@ -21,6 +21,7 @@ jobs:
       - name: Test
         run: npm test --prefix shop-app
       - name: SonarQube Scan
+        if: ${{ secrets.SONAR_TOKEN != '' && secrets.SONAR_HOST_URL != '' }}
         uses: SonarSource/sonarqube-scan-action@v2
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
