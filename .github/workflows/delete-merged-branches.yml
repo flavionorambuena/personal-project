@@ -1,0 +1,24 @@
+name: Delete merged branches
+
+on:
+  pull_request:
+    types:
+      - closed
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: |
+      github.event.pull_request.merged == true &&
+      github.event.pull_request.head.ref != 'develop' &&
+      github.event.pull_request.head.ref != 'staging'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete branch
+        uses: peter-evans/delete-branch@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.event.pull_request.head.ref }}
+
