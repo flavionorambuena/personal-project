@@ -11,6 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/shop-app",
             "index": "src/index.html",
@@ -28,6 +29,7 @@
           }
         },
         "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "shop-app:build"
           }
