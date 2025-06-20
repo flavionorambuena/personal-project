@@ -1,5 +1,10 @@
 This repository contains a minimal Angular application located in `shop-app`.
 
+## Prerequisites
+
+The application requires **Node.js 22** or later. Install it from
+[nodejs.org](https://nodejs.org/) before running the scripts or workflows.
+
 ## Continuous Integration
 
 GitHub Actions automatically install dependencies and build the project on every
