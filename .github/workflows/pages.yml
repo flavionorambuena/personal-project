@@ -25,6 +25,10 @@ jobs:
         run: npm install --prefix shop-app
       - name: Build
         run: npm run build --prefix shop-app -- --base-href /personal-project/
+
+      - name: Create .nojekyll file
+        run: echo "" > shop-app/dist/shop-app/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
