@@ -10,9 +10,10 @@ enable code analysis.
 ## GitHub Pages Deployment
 
 The project is automatically deployed to GitHub Pages from the `main` branch.
-After each successful build, the production files located in
-`shop-app/dist/shop-app` are published to the `gh-pages` branch. You can view
-the site at `https://<username>.github.io/personal-project/` once GitHub Pages
-is enabled in the repository settings.
+After each successful build, the production files are published to the
+`gh-pages` branch inside a `/personal-project/` folder. Visiting
+`https://<username>.github.io/` will redirect to
+`https://<username>.github.io/personal-project/` once GitHub Pages is enabled in
+the repository settings.
 
 # personal-project
