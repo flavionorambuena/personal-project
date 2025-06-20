@@ -18,21 +18,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
       - name: Install dependencies
         run: npm install --prefix shop-app
-      - name: Build
+
+      - name: Build Angular app
         run: npm run build --prefix shop-app -- --base-href /personal-project/
 
       - name: Create .nojekyll file
         run: echo "" > shop-app/dist/shop-app/.nojekyll
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload artifact to GitHub Pages
+        uses: actions/upload-pages-artifact@v2
         with:
           path: shop-app/dist/shop-app
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -40,9 +44,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Download artifact
-        uses: actions/download-pages-artifact@v4
-  
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
