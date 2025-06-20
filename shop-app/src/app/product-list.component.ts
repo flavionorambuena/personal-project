@@ -8,6 +8,7 @@ interface Product {
 
 @Component({
   selector: 'app-product-list',
+  standalone: true,
   templateUrl: './product-list.component.html'
 })
 export class ProductListComponent {
