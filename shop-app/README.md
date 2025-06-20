@@ -20,4 +20,4 @@ The application will be available at `http://localhost:4200`.
 
 ## GitHub Pages
 
-A production build is automatically deployed to GitHub Pages from the `main` branch. Visit `https://<username>.github.io/personal-project/` after enabling GitHub Pages in the repository settings.
+A production build is automatically deployed to GitHub Pages from the `main` branch. The site is available at `https://<username>.github.io/personal-project/` (the root URL will redirect to this location) after enabling GitHub Pages in the repository settings.
