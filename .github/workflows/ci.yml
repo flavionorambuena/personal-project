@@ -18,11 +18,11 @@ jobs:
         run: npm install --prefix shop-app
       - name: Build
         run: npm run build --prefix shop-app
-      - name: Test
+      - name: Test and coverage
         run: npm test --prefix shop-app
       - name: SonarQube Scan
         if: ${{ secrets.SONAR_TOKEN != '' && secrets.SONAR_HOST_URL != '' }}
-        uses: SonarSource/sonarqube-scan-action@v2
+        uses: SonarSource/sonarqube-scan-action@v4
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}

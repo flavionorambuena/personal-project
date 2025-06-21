@@ -18,4 +18,9 @@ After each successful build, the production files are published to the
 `https://<username>.github.io/personal-project/` once GitHub Pages is enabled in
 the repository settings.
 
-# personal-project
+
+## Test Coverage
+
+Unit tests run during the CI workflow using Angular's Karma test runner. Coverage reports are written to `shop-app/coverage/lcov.info` and uploaded to SonarQube using the `sonar.javascript.lcov.reportPaths` setting in `sonar-project.properties`.
+
+If you use SonarCloud, disable automatic analysis and rely on the CI-based scan to see coverage results.
