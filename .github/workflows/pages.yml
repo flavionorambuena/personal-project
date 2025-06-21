@@ -17,9 +17,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
@@ -27,7 +29,9 @@ jobs:
         run: npm install --prefix shop-app
 
       - name: Build Angular app
-        run: npm run build --prefix shop-app -- --base-href /personal-project/ --output-path shop-app/dist/personal-project
+        run: |
+          cd shop-app
+          npx ng build --base-href /personal-project/ --output-path dist/personal-project
 
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v3
