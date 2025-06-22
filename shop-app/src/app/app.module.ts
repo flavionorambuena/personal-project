@@ -5,9 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list.component';
+import { MealRegisterComponent } from './meal-register.component';
 
 const routes: Routes = [
-  { path: '', component: ProductListComponent }
+  { path: '', component: MealRegisterComponent },
+  { path: 'products', component: ProductListComponent }
 ];
 
 @NgModule({
@@ -15,6 +17,7 @@ const routes: Routes = [
     BrowserModule,
     AppComponent,
     ProductListComponent,
+    MealRegisterComponent,
     RouterModule.forRoot(routes),
     HttpClientModule,
   ],
