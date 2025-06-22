@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 interface Product {
   id: number;
@@ -17,4 +18,18 @@ export class ProductListComponent {
     { id: 2, name: 'Product 2', price: 200 },
     { id: 3, name: 'Product 3', price: 300 }
   ];
+
+  qrImage: string | null = null;
+
+  constructor(private http: HttpClient) {}
+
+  generateQr(): void {
+    this.http
+      .get<{ statusCode: number; body: { id: string; qr: string } }>(
+        'https://zplloylaoh.execute-api.us-east-1.amazonaws.com/prod/generate-qr'
+      )
+      .subscribe((response) => {
+        this.qrImage = response.body.qr;
+      });
+  }
 }

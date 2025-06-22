@@ -4,3 +4,9 @@
     {{ product.name }} - ${{ product.price }}
   </li>
 </ul>
+
+<button type="button" (click)="generateQr()">Generate QR</button>
+
+<div *ngIf="qrImage">
+  <img [src]="'data:image/png;base64,' + qrImage" alt="QR Code" />
+</div>
